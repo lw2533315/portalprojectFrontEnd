@@ -1,0 +1,36 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+
+
+<table style="width:65%;height:90%;" align="center">
+
+<tr>
+<th colspan="7" style="background-color:#5E1D55;color:white;"><h3>Timesheet Report</h3></th>
+</tr>
+
+<tr style="background-color:#32A9EE;color:white;">
+    <th>Employee Code</th>
+    <th>Employee Name</th>
+    <th>Project Code</th>
+    <th>Project Name</th>
+    <th>Task</th>
+    <th>Ending Date</th>
+    <th>Action</th>
+
+
+
+</tr>
+
+<tr>
+    <tr name="timesheettable" *ngFor = "let item of timesheets">
+        <td><b>{{item.employeeCode}}</b></td>
+        <td>{{item.employeeName}}</td>
+        <td>{{item.projectCode}}</td>
+        <td>{{item.projName}}</td>
+        <td>{{item.task}}</td>
+        <td>{{item.endDate}}</td>
+        <td>{{item.action}}</td>
+</tr>

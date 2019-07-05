@@ -1,0 +1,96 @@
+
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<!-- Name Section -->
+<div class="registionform container">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-1">
+      <form class="form-horizontal" role="form">
+        <fieldset>
+
+          <!-- Form Name -->
+          <span style="color:red">{{errorinfo}}</span>
+          <legend>Leave Application Forms</legend>
+
+          <div   *ngFor="let it of vacations; let key = index">
+          <h3>the {{key + 1}}th Leaving Form</h3>
+          <div class="form-group">
+              <div class="col-sm-6">
+              <label for="exampleFormControlInput11">Select Employee </label><span class="star">*</span>
+                <input type="text" name="employeeid" id="employeeid" placeholder="" class="form-control" value="{{it.empName}}" readonly/>
+              </div>
+            </div>
+          
+
+         
+          <div class="form-group">
+            <div class="col-sm-6">
+              <label for="employeeid">Reason For Leave</label><span class="star">*</span>
+              <input type="text" name="employeeid" id="employeeid" placeholder="" class="form-control" value="{{it.reason}}" readonly/>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-sm-6">
+              <label for="paydate">Description</label><span class="star">*</span>
+              <input type="text" name="paydate" id="paydate" class="form-control" value="{{it.description}}" readonly>
+            </div>
+          </div>
+          
+          <div class="form-group">
+              <div class="col-sm-6">
+                <label for="salary">From Date</label><span class="star">*</span>
+                <input type="date" name="salary" id="salary"  class="form-control" value="{{it.fromDate}}"  readonly>
+              </div>
+          </div> 
+
+          <div class="form-group">
+              <div class="col-sm-6">
+                <label for="salary">To Date</label><span class="star">*</span>
+                <input type="date" name="salary" id="salary" class="form-control" value="{{it.endDate}}" readonly>
+              </div>
+          </div> 
+
+
+          <div class="form-group">
+              <div class="col-sm-6">
+                <label for="employeeid">Status</label><span class="star">*</span>
+                <br>
+                <select style="width:350px; height: 33px" name="status"  [(ngModel)]="vacations[key].status">
+                  <option  [value]="selectUndefinedOptionValue">pending</option>
+                  <option  *ngFor="let item of status" [value] = "item" >{{item}}</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+<!-- Command -->
+          <div class="form-group" style="margin-top: 30px">
+            <div class="col-sm-12">
+              <div>
+                <button (click)="permitLeave()" type="submit" class="btn btn-primary" style="margin-right: 30px">Apply Leave</button>
+                <!-- <button type="submit" class="btn btn-primary">Reset Form</button> -->
+              </div>
+            </div>
+          </div>
+          
+
+
+        </fieldset>
+      </form>
+    </div><!-- /.col-lg-12 -->
+</div><!-- /.row -->
+</div>
+
+
+<!-- Has Sibling Modal -->
+
+
+
+
+
+

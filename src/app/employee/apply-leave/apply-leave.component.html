@@ -1,0 +1,91 @@
+
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<!-- Name Section -->
+<div class="registionform container">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-1">
+      <form class="form-horizontal" role="form">
+        <fieldset>
+
+          <!-- Form Name -->
+          <span style="color:red">{{errorinfo}}</span>
+          <legend>Leave Application Form</legend>
+
+
+          <!-- <div class="form-group">
+              <div class="col-sm-6">
+              <label for="exampleFormControlInput11">Select Employee </label><span class="star">*</span>
+              <br>
+              <select style = "width:150px" class="btn btn-secondary dropdown-toggle"  name = "employee" [(ngModel)]="empIdx" >
+                <option *ngFor="let item of employees; let key=index" [value]='key'>{{item.firstName}}<span>&nbsp;</span>{{item.lastName}}</option>  
+
+              </select>
+              </div>
+            </div> -->
+          
+
+          <!-- Text input-->
+         
+          <div class="form-group">
+            <div class="col-sm-6">
+              <label for="employeeid">Reason For Leave</label><span class="star">*</span>
+              <input type="text" name="employeeid" id="employeeid" placeholder="" class="form-control" [(ngModel)]="vacation.reason"/>
+            </div>
+          </div>
+
+          <!-- Text input-->
+          <div class="form-group">
+            <div class="col-sm-6">
+              <label for="paydate">Description</label><span class="star">*</span>
+              <input type="text" name="paydate" id="paydate" class="form-control"  [(ngModel)]="vacation.description">
+            </div>
+          </div>
+          
+          <div class="form-group">
+              <div class="col-sm-6">
+                <label for="salary">From Date</label><span class="star">*</span>
+                <input type="date" name="salary" id="salary"  class="form-control" [(ngModel)]="vacation.fromDate">
+              </div>
+          </div> 
+
+          <div class="form-group">
+              <div class="col-sm-6">
+                <label for="salary">To Date</label><span class="star">*</span>
+                <input type="date" name="salary" id="salary" class="form-control" [(ngModel)]="vacation.endDate">
+              </div>
+          </div> 
+
+             
+
+
+
+<!-- Command -->
+          <div class="form-group" style="margin-top: 30px">
+            <div class="col-sm-12">
+              <div>
+                <button (click)="addLeave()" type="submit" class="btn btn-primary" style="margin-right: 30px">Apply Leave</button>
+                <!-- <button type="submit" class="btn btn-primary">Reset Form</button> -->
+              </div>
+            </div>
+          </div>
+
+
+        </fieldset>
+      </form>
+    </div><!-- /.col-lg-12 -->
+</div><!-- /.row -->
+</div>
+
+
+<!-- Has Sibling Modal -->
+
+
+
+
+
+

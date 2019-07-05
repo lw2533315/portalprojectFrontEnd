@@ -1,0 +1,70 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<!-- Name Section -->
+<div class="registionform container">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-1">
+      <form class="form-horizontal" role="form">
+        <fieldset>
+
+          <!-- Form Name -->
+          <span style="color:red">{{errorinfo}}</span>
+          <legend>Pay Employee Salary</legend>
+
+          <!-- Text input-->
+         
+          <div class="form-group">
+            <div class="col-sm-6">
+              <label for="employeeid">Employee Id</label><span class="star">*</span>
+              <br>
+              <select style="width:350px; height: 33px" name="employeeid" [(ngModel)]="empIdx">
+                <option *ngFor="let item of employees; let key = index" [value]=key>{{item.id}}</option>
+
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-sm-6">
+              <label for="salary">Employee Name</label><span class="star">*</span>
+              <input type="text" value= '{{this.employees[this.empIdx].firstName}} {{this.employees[this.empIdx].lastName}}' name="salary" id="salary" placeholder="name" class="form-control">
+            </div>
+        </div> 
+
+          <!-- Text input-->
+          <div class="form-group">
+            <div class="col-sm-6">
+              <label >Pay Date</label><span class="star">*</span>
+              <select style="width:350px; height: 33px" name="day" [(ngModel)]="salary.payDate">
+              <option *ngFor="let item of days" [value]="item">{{item}}<span>th of the month</span></option>
+            </select>
+            </div>
+          </div>
+          
+          <div class="form-group">
+              <div class="col-sm-6">
+                <label for="salary">Amount Paid</label><span class="star">*</span>
+                <input type="text" [(ngModel)]="salary.payAmount" name="salary" id="salary" placeholder="Amount Paid" class="form-control">
+              </div>
+          </div> 
+
+<!-- Command -->
+          <div class="form-group" style="margin-top: 30px">
+            <div class="col-sm-12">
+              <div>
+                <button type="submit" (click)="addSalary()" class="btn btn-primary">Submit</button>
+              </div>
+            </div>
+          </div>
+        </fieldset>
+      </form>
+    </div><!-- /.col-lg-12 -->
+</div><!-- /.row -->
+</div>
+
+
+<!-- Has Sibling Modal -->
+

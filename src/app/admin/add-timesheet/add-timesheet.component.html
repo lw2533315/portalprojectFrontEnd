@@ -1,0 +1,142 @@
+<!-- <form>
+
+  <div class="form-group">
+    <label for="exampleFormControlInput11">Select Employee Code</label>
+    <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false">
+        Please Select
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" href="#">Action</a>
+        <a class="dropdown-item" href="#">Another action</a>
+        <a class="dropdown-item" href="#">Something else here</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="exampleFormControlInput12">Select Project Code</label>
+    <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false">
+        Please Select
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" href="#">Action</a>
+        <a class="dropdown-item" href="#">Another action</a>
+        <a class="dropdown-item" href="#">Something else here</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">Work Title</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+  </div>
+
+  <div class="form-group">
+    <label for="exampleFormControlTextarea13">Work Description</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+  </div>
+
+  <div class="form-group">
+    <label for="exampleFormControlTextarea15">Total Walking Hours</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+  </div>
+
+
+</form> -->
+
+
+
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<!-- Name Section -->
+<div class="registionform container">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-1">
+      <form class="form-horizontal" role="form">
+        <fieldset>
+
+          <!-- Form Name -->
+          <legend>Timesheet Entry Form</legend>
+          <span style="color:red">{{errorinfo}}</span>
+
+          <div class="form-group">
+              <div class="col-sm-6">
+
+              <label for="exampleFormControlInput11">Select Employee Name</label><span class="star">*</span>
+              <br>
+              <select style = "width:150px" class="btn btn-secondary dropdown-toggle"  name = "employee" [(ngModel)]="empIdx" >
+                <option *ngFor="let item of employees; let key = index" [value]='key'>{{item.firstName}}<span>&nbsp;</span>{{item.lastName}}</option>  
+
+              </select>
+
+
+              </div>
+            </div>
+          
+            <div class="form-group">
+                <div class="col-sm-6">
+              <label for="exampleFormControlInput11">Select Project </label><span class="star">*</span>
+              <br>
+              <select style = "width:150px" class="btn btn-secondary dropdown-toggle"  name = "employee" [(ngModel)]="projIdx" >
+                <option *ngFor="let item of projects; let key = index" [value]='key'>{{item.projName}}</option>  
+
+              </select>
+              </div>
+            </div>
+
+
+
+          <!-- Text input-->
+         
+          <div class="form-group">
+            <div class="col-sm-6">
+              <label for="employeeid">Task</label><span class="star">*</span>
+              <input type="text" name="employeeid" id="employeeid" placeholder="" class="form-control" [(ngModel)]="timesheet.task"/>
+            </div>
+          </div>
+
+          <!-- Text input-->
+          <div class="form-group">
+            <div class="col-sm-6">
+              <label for="paydate">Work Description</label><span class="star">*</span>
+              <input type="text" name="paydate" id="paydate" class="form-control" [(ngModel)]="timesheet.taskDescription">
+            </div>
+          </div>
+          
+          <div class="form-group">
+              <div class="col-sm-6">
+                <label for="salary">Ending Date</label><span class="star">*</span>
+                <input type="date" name="salary" id="salary" placeholder="" class="form-control" [(ngModel)]="timesheet.endDate">
+              </div>
+          </div> 
+
+<!-- Command -->
+          <div class="form-group" style="margin-top: 30px">
+            <div class="col-sm-12">
+              <div>
+                <button (click)="addTimesheet()" type="submit" class="btn btn-primary">Submit</button>
+              </div>
+            </div>
+          </div>
+        </fieldset>
+      </form>
+    </div><!-- /.col-lg-12 -->
+</div><!-- /.row -->
+</div>
+
+
+<!-- Has Sibling Modal -->
+
+
+
+
+
+

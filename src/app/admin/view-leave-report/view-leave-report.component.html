@@ -1,0 +1,34 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+
+
+<table style="width:65%;height:90%;" align="center">
+<span style="color:red">{{errorinfo}}</span>
+<tr>
+<th colspan="6" style="background-color:#5E1D55;color:white;"><h3>Leave Report</h3></th>
+</tr>
+
+<tr style="background-color:#32A9EE;color:white;">
+<th>Employee Code</th>
+<th>Employee Name</th>
+<th>Leave Start</th>
+<th>Leave End</th>
+<th>Type</th>
+<th>Description</th>
+
+
+
+</tr>
+
+<tr name="leavestable" *ngFor = "let item of vacations">
+
+<td><b>{{item.empId}}</b></td>
+<td>{{item.empName}}</td>
+<td>{{item.fromDate}}</td>
+<td>{{item.endDate}}</td>
+<td>{{item.reason}}</td>
+<td>{{item.description}}</td>
+</tr>

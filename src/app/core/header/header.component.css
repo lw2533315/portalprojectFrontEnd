@@ -1,0 +1,76 @@
+#header {
+	max-width: 100%;
+}
+#header h1 {
+	font-size: 50px;
+	font-weight: normal;
+	line-height: 50px;
+	margin: 0;
+	padding: 30px 0;
+	text-align: center;
+}
+#header h1 a {
+	color: #99fa99;
+	text-decoration: none;
+}
+#header h1 a span {
+	color: #b6d8cf;
+	display: block;
+	font-family: 'nixie_oneregular';
+	font-size: 26px;
+	text-transform: uppercase;
+}
+#header ul#navigation {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+#header ul#navigation li {
+	display: inline;
+	line-height: 30px;
+	position: relative;
+}
+#header ul#navigation li a {
+	color: #b6d8cf;
+	font-size: 18px;
+	padding: 0 46px;
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+#header ul#navigation li a:hover,
+#header ul#navigation li.current ul li a:hover {
+	color: #d3a3ff;
+}
+#header ul#navigation li.current a {
+	color: #99fa99;
+}
+#header ul#navigation li ul {
+	display: none;
+	left: 0;
+	list-style: none outside none;
+	margin: 0;
+	padding: 11px 0 0;
+	position: absolute;
+	top: 12px;
+}
+#header ul#navigation li:hover ul {
+	display: block;
+}
+#header ul#navigation li ul li {
+	background: #077054;
+	display: block;
+	height: 46px;
+	line-height: 46px;
+}
+#header ul#navigation li ul li a {
+	padding: 0 20px;
+}
+#header ul#navigation li.current ul li a {
+	color: #b6d8cf;
+}
+
+.active{
+	color:yellow !important
+}

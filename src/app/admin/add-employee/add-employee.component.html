@@ -1,0 +1,171 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<!-- Name Section -->
+<div class="registionform container">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-1">
+      <form class="form-horizontal" role="form">
+        <fieldset>
+
+          <!-- Form Name -->
+          <legend>Personal Information Details</legend>
+          <span style="color:red">{{errorinfo}}</span>
+
+          <div class="form-group">
+                <div class="col-sm-4">
+                        <label for="salution">Salution</label><span class="star">*</span>
+                        <select id= "salution" class="form-control" [(ngModel)]="employee.salution" name="salution">
+                          <option value="Mr">Mr</option>
+                          <option value="Mrs">Mrs</option>
+                          <option value="Ms">Ms</option>
+                        </select>
+                </div>
+                <div class="col-sm-4">
+                        <label for="status">Status</label><span class="star">*</span>
+                        <select id= "status" class="form-control" [(ngModel)]="employee.status" name="status">
+                          <option value="full-time">full-time</option>
+                          <option value="part-time">part-time</option>
+                          <option value="contractor">contractor</option>
+                          <option value="manager">manager</option>
+                        </select>
+                </div>
+                <div class="col-sm-4">
+                        <label for="department">Department</label><span class="star">*</span>
+                        <select id= "department" class="form-control" [(ngModel)]="employee.department" name="department">
+                          <option value="JAVA">JAVA</option>
+                          <option value="Android">Android</option>
+                          <option value="IOS">IOS</option>
+                        </select>
+                </div>
+          </div>
+
+          <!-- Text input-->
+          <div class="form-group">
+            <div class="col-sm-4">
+              <label for="firstName">FirstName</label><span class="star">*</span>
+              <input type="text"  [(ngModel)]="employee.firstName" name="firstName" id="firstName" placeholder="First Name" class="form-control"/>
+            </div>
+            <div class="col-sm-4">
+              <label for="middleName">middleName</label>
+              <input type="text" [(ngModel)]="employee.middleName" name="middleName" id="middleName" placeholder="Middle Name" class="form-control"/>
+            </div>
+            <div class="col-sm-4">
+              <label for="lastName">LastName</label><span class="star">*</span>
+              <input type="text" [(ngModel)]="employee.lastName" name="lastName" id="lastName" placeholder="Last Name" class="form-control"/>
+            </div>
+          </div>
+
+          <!-- Text input-->
+          <div class="form-group">
+                <div class="col-sm-4">
+                        <label for="gender">Gender</label><span class="star">*</span>
+                        <select type="gender" [(ngModel)]="employee.gender" name = "gender" id= "gender" placeholder="Gender" class="form-control">
+                          <option value="male">Male</option>
+                          <option value="female">Female</option>
+                        </select>
+                </div>
+            <div class="col-sm-4">
+              <label for="birth">Date of Birth</label><span class="star">*</span>
+              <input type="date" name="birth" [(ngModel)]="employee.birth" id="birth" placeholder="Date Of Birth" class="form-control">
+            </div>
+            <div class="col-sm-4">
+                    <label for="nation">Nationality</label><span class="star">*</span>
+                    <input type="text" [(ngModel)]="employee.nationality" name="nation" id="nation" placeholder="Nationality" class="form-control">
+                  </div>
+          </div>
+
+          <!-- Text input-->
+          <div class="form-group">
+                <div class="col-sm-4">
+                        <label for="Email">Email</label>
+                        <input type="text" [(ngModel)]="employee.email" name="email" id="email" placeholder="Email" class="form-control">
+                      </div>
+          
+
+          <div class="form-group">
+                <div class="col-sm-4">
+                        <label for="Email">Mobile</label>
+                        <input type="text" [(ngModel)]="employee.mobile" name="mobile" id="mobile" placeholder="Mobile" class="form-control">
+                      </div>
+          </div>
+          </div>
+
+          
+
+<!-- Address Section -->
+          <!-- Form Name -->
+          <legend>Employee Address Details</legend>
+          <!-- Text input-->
+          <div class="form-group">
+            <div class="col-sm-10">
+              <label for="address1">Address Line 1</label><span class="star">*</span>
+              <input type="text" [(ngModel)]="address.address" name="addressLine" placeholder="Address Line 1" class="form-control">
+            </div>
+          </div>
+          <!-- Text input-->
+          <!-- <div class="form-group">
+            <div class="col-sm-10">
+              <label for="address2">Address Line 2</label> 
+              <input type="text" [(ngModel)]="address.address2" name="addressLine2" placeholder="Address Line 2" class="form-control">
+            </div>
+          </div> -->
+          <!-- Text input-->
+          <div class="form-group">
+            <div class="col-sm-4">
+                <label for="city">City</label><span class="star">*</span>
+              <input type="text" [(ngModel)]="address.city" name="city" placeholder="City" class="form-control">
+            </div>
+            <div class="col-sm-2">
+                <label for="state">State</label><span class="star">*</span>
+              <input type="text" [(ngModel)]="address.state" name="state" placeholder="State" class="form-control">
+            </div>
+            <div class="col-sm-4">
+                    <label for="postalcode">Post Code</label><span class="star">*</span>
+              <input type="text" [(ngModel)]="address.postalCode" name="postalCode" placeholder="Post Code" class="form-control">
+            </div>
+          </div>
+          <div class="form-group">
+          <div class="col-sm-4">
+                <label for="country">Country</label><span class="star">*</span>
+          <input type="text" [(ngModel)]="address.country" name="country" placeholder="Country" class="form-control">
+        </div>
+        </div>
+
+<!-- Emergency Contact Section -->
+          <!-- Form Name -->
+          <legend>Employee Login Details</legend>
+          <!-- Text input-->
+          <div class="form-group">
+            <div class="col-sm-4">
+                    <label for="username">Username</label><span class="star">*</span>
+              <input type="text" [(ngModel)]="user.username" name="username" placeholder="User Name" class="form-control">
+            </div>
+            <div class="col-sm-4">
+                    <label for="password">Password</label><span class="star">*</span>
+              <input type="password" [(ngModel)]="user.password" name="password" placeholder="Password" class="form-control">
+            </div>
+            <div class="col-sm-4">
+                    <label for="confirm">Confirm Password</label><span class="star">*</span>
+              <input type="password" name="confirm" placeholder="Confirm Password" class="form-control">
+            </div>
+          </div>
+
+<!-- Command -->
+          <div class="form-group" style="margin-top: 30px">
+            <div class="col-sm-12">
+              <div>
+                <button type="submit" class="btn btn-primary" (click)="createNewEmployee()">Submit</button>
+              </div>
+            </div>
+          </div>
+        </fieldset>
+      </form>
+    </div><!-- /.col-lg-12 -->
+</div><!-- /.row -->
+</div>
+
+
+<!-- Has Sibling Modal -->
