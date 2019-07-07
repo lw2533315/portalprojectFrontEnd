@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient,HttpHeaders} from '@angular/common/http';
 import { Observable } from 'rxjs';
-import {map} from 'rxjs/operators';
 import { Timesheet } from './model/timesheet';
 import { Project } from '../admin/domain/project';
 import { Salary } from '../admin/domain/salary';
@@ -24,14 +23,18 @@ export class EmployeeService {
   };
 
   //find username from token
-  username:string = JSON.parse(localStorage.getItem("token")).username;
+  username:string;
 
   employeeurl:string = "http://localhost:8103/auth/emp"
    //headerr
   headers:any = new Headers( {  
     'Content-Type':  'application/json',
   });
-  constructor(private http:HttpClient) {}
+  constructor(private http:HttpClient) {
+    if(localStorage.getItem("token") != null){
+      this.username = JSON.parse(localStorage.getItem("token")).username;
+    }
+  }
 
 
   // when refresh page update timesheet and view timesheet all call these one 
@@ -57,7 +60,7 @@ export class EmployeeService {
   }
 
 
-   
+  //find the employee salary recorder
   getSalary(){
     return this.http.get<Salary>(this.employeeurl + `/salary/${this.username}`,
      {headers: this.headers, responseType:"json" } ) 
@@ -71,9 +74,23 @@ export class EmployeeService {
       return this.http.post(this.employeeurl + `/vacation/${this.username}`, vacation, {headers:this.headers, responseType:"text"});
   }
   
-
+  //find the employee all leave recorder
   findLeaves(){
     return this.http.get<Vacation[]>(this.employeeurl + `/vacations/${this.username}`,{headers: this.headers, responseType:"json" }   )
+  }
+
+
+  //ask backend send email to reset password
+  sendEmail(email:string){
+    console.log(email);
+    return this.http.get(this.employeeurl + "/email?email="+email, {headers: this.headers, responseType:"json" }   )
+
+  }
+
+  //ask backend persist the password
+  resetpassword(token:string, repeatpassword:string, id:string){
+    console.log(token);
+    return this.http.post(this.employeeurl + "/password?id="+id+"&token="+token+ "&password="+repeatpassword, {headers: this.headers, responseType:"text" }   )
   }
 
  

@@ -8,9 +8,11 @@ import { ApplyLeaveComponent } from './apply-leave/apply-leave.component';
 import { EmployeeRoutingModule } from './employee.routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { EmailtrieveComponent } from './emailtrieve/emailtrieve.component';
+import { UpdatepasswordComponent } from './updatepassword/updatepassword.component'
 
 @NgModule({
-  declarations: [ViewEmpsalaryreportComponent, ViewEmpLeavereportComponent, ViewTimesheetReportComponent, UpdateTimesheetComponent, ApplyLeaveComponent],
+  declarations: [ViewEmpsalaryreportComponent, ViewEmpLeavereportComponent, ViewTimesheetReportComponent, UpdateTimesheetComponent, ApplyLeaveComponent, EmailtrieveComponent, EmailtrieveComponent, UpdatepasswordComponent],
   imports: [
     CommonModule,
     EmployeeRoutingModule ,
