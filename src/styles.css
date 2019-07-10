@@ -8,6 +8,10 @@ body {
 	margin: 0;
 	padding: 0;
 }
+
+div .formvalidate{
+	color: red;
+}
 /* @font-face {
 	font-family: 'latoregular';
 	src: url('../fonts/lato-regular-webfont.eot');

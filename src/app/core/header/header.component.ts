@@ -12,6 +12,7 @@ export class HeaderComponent implements OnInit {
   empLoggedIn: boolean;
   empStatus: boolean = false;
   adminStatus:boolean = false;
+  hideAdmin:boolean = false;
   jwtHelper = new JwtHelperService;
 
   constructor() { }
@@ -24,6 +25,7 @@ export class HeaderComponent implements OnInit {
     && !this.jwtHelper.isTokenExpired(JSON.parse(localStorage.getItem("token")).token)){
       console.log("emp login ")
       this.empStatus = true;
+      this.hideAdmin = true;
     }
 
     if(localStorage.getItem("token") != null && JSON.parse(localStorage.getItem("token")).role == "admin" 

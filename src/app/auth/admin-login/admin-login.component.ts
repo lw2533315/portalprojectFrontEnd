@@ -4,6 +4,7 @@ import { AuthService } from '../auth.service';
 import { JwtObj } from '../model/jwt-obj';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { Router } from '@angular/router';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-admin-login',
@@ -15,14 +16,26 @@ export class AdminLoginComponent implements OnInit {
   token:string;
   jwt = new JwtObj();
   jwtHelper = new JwtHelperService();
+  myForm:FormGroup;
+  usernameinfo:string = "username is required";
+  passwordinfo:string = "password must be 3 - 8 length";
+ 
 
-  constructor(private service:AuthService, private router:Router){}
+  constructor(private service:AuthService, private router:Router, private formBuild:FormBuilder){
+    this.myForm = this.formBuild.group({
+      'username' : ["", Validators.required],
+      'password' :["", Validators.compose([Validators.required, Validators.minLength(3), Validators.maxLength(8)])],
+    })
+  }
 
 
   ngOnInit() {
   }
 
-  adminloginfunc(){
+  adminloginfunc(post){
+    this.user.password = post.password;
+    this.user.username = post.username;
+    console.log(this.user);
     this.service.emplogin(this.user).subscribe(
       resp =>{
         this.token = resp

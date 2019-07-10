@@ -43,10 +43,13 @@
               <a class="nav-link" routerLink="/employeelogin"  routerLinkActive="active">Employee login</a>
             
              
-          </ng-template>
+          </ng-template>                         
         </li>
 
+        <div *ngIf="hideAdmin; then template1; else template2"></div>
 
+        <ng-template #template2>
+        
         <li class="nav-item">
             <div *ngIf="adminStatus; then thenBlock; else elseBlock"></div>
 
@@ -88,11 +91,12 @@
         
 
         </li>
+      </ng-template>
 
 
         <li class="nav-item">
-          <div *ngIf="empStatus; then thenBlock"></div>
-          <ng-template #thenBlock>
+          <div *ngIf="empStatus; then thenBlock2"></div>
+          <ng-template #thenBlock2>
             <a class="nav-link" routerLink="/home"   (click)="logout()">Log Out</a>
             </ng-template>
           </li>

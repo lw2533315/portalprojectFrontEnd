@@ -12,7 +12,7 @@ import { AdminModule } from './admin/admin.module';
 import { EmployeeModule } from './employee/employee.module';
 import { CoreModule } from './core/core.module';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { InterceptorService } from './auth/interceptor.service';
 import { HomeComponent } from './home/home.component';
 import { InfomationComponent } from './infomation/infomation.component';
@@ -32,7 +32,8 @@ import { InfomationComponent } from './infomation/infomation.component';
     AdminModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     [{
